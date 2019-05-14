@@ -1,14 +1,9 @@
 package edu.android.hashtravel;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -18,14 +13,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    private BottomNavigationView bottomView;
     private ViewPager viewPager;
-
+    private ViewPagerAdapter adapter;
+    private MenuItem bottomMenuItem;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,8 +35,8 @@ public class MainActivity extends AppCompatActivity
                 case R.id.navigation_dashboard:
                     viewPager.setCurrentItem(1);
                     return true;
-                case R.id.navigation_notifications:
-
+                case R.id.navigation_hotplace:
+                    viewPager.setCurrentItem(2);
                     return true;
             }
             return false;
@@ -62,10 +58,41 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        BottomNavigationView navView = findViewById(R.id.bottom_view);
+        bottomView= findViewById(R.id.bottom_view);
         viewPager = findViewById(R.id.viewpager_id);
 
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(new HomeFragment(), "homefragment");
+        adapter.addFragment(new DashboardFragment(), "dashboard");
+        adapter.addFragment(new HotPlaceFragment(), "hotplace");
+        viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int postion, float positonOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int postion) {
+                if(bottomMenuItem != null) {
+                    bottomMenuItem.setChecked(false);
+                } else {
+                    bottomView.getMenu().getItem(0).setChecked(false);
+                }
+
+                bottomView.getMenu().getItem(postion).setChecked(true);
+                bottomMenuItem = bottomView.getMenu().getItem(postion);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 
@@ -126,7 +153,5 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void text(View view) {
 
-    }
 }
