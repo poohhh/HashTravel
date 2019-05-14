@@ -3,9 +3,11 @@ package edu.android.hashtravel;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,7 +23,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView mTextMessage;
+
+    private ViewPager viewPager;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -30,11 +34,10 @@ public class MainActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-
+                    viewPager.setCurrentItem(0);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                    startActivity(intent);
+                    viewPager.setCurrentItem(1);
                     return true;
                 case R.id.navigation_notifications:
 
@@ -60,8 +63,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         BottomNavigationView navView = findViewById(R.id.bottom_view);
-//        mTextMessage = findViewById(R.id.message);
+        viewPager = findViewById(R.id.viewpager_id);
+
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 
     @Override
