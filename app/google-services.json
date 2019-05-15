@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "110244359193",
+    "firebase_url": "https://hashtravel-566a6.firebaseio.com",
+    "project_id": "hashtravel-566a6",
+    "storage_bucket": "hashtravel-566a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110244359193:android:9671ef1d42ad7ccb",
+        "android_client_info": {
+          "package_name": "edu.android.hashtravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110244359193-qs51gbg20icq85d1jectmks1rpr3iqvk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.android.hashtravel",
+            "certificate_hash": "b98736785dec7f83bce76eba73ea220a6c533cc6"
+          }
+        },
+        {
+          "client_id": "110244359193-e023rdpj5hjah2p5pjid4eta73neikps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHLzgyHb8jMDCPjs4RRd-z8U94uGoJY3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110244359193-e023rdpj5hjah2p5pjid4eta73neikps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

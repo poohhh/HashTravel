@@ -2,6 +2,23 @@ package edu.android.hashtravel;
 
 
 public class DashBoard {
+
+    // Model Class
+//    public class Continent {
+//        private String name;
+//        private String desc;
+//
+//        public class Country {
+//            private String name;
+//            private String location;
+//            private String desc;
+//            private String etc;
+//            public class Place {
+//                private String name;
+//                private String ratting;
+//    }
+//        }
+//    }
     private int articleNo;
     private String[] continent;
     private String[] contry;
