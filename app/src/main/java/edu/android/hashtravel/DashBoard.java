@@ -8,61 +8,39 @@ public class DashBoard {
     private String subject;
     private String description;
     private String author;
+    private String hashTag;
 
-    public DashBoard(String[] continent, String[] contry, String subject, String description, String author) {
 
-        this.continent = continent;
-        this.contry = contry;
-        this.subject = subject;
-        this.description = description;
-        this.author = author;
+    static class Place {
+        private String name; // 여행지 이름
+        private String desc; // 여행지 설명
+        private float rating; // 여행지 별점 점수
+        private int photoId; // 여행지 사진 리소스 아이디
+
+        public Place(String name, String desc, float rating, int photoId) {
+            this.name = name;
+            this.desc = desc;
+            this.rating = rating;
+            this.photoId = photoId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        public float getRating() {
+            return rating;
+        }
+
+        public int getPhotoId() {
+            return photoId;
+        }
     }
 
-    public int getArticleNo() {
-        return articleNo;
-    }
 
-    public void setArticleNo(int articleNo) {
-        this.articleNo = articleNo;
-    }
 
-    public String[] getContinent() {
-        return continent;
-    }
-
-    public void setContinent(String[] continent) {
-        this.continent = continent;
-    }
-
-    public String[] getContry() {
-        return contry;
-    }
-
-    public void setContry(String[] contry) {
-        this.contry = contry;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 }

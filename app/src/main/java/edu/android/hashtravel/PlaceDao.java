@@ -2,6 +2,7 @@ package edu.android.hashtravel;
 
 import java.util.ArrayList;
 import java.util.List;
+import static edu.android.hashtravel.DashBoard.Place;
 
 public class PlaceDao {
     // 여행지 리스트
