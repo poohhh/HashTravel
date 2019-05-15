@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".WriteBord">
+    android:layout_height="wrap_content"
+    tools:context=".WriteBordActivity">
 
     <LinearLayout
+
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/textSubject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -63,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/textSubject" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -100,7 +101,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="390dp"
-        android:layout_height="382dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -109,9 +110,9 @@
         app:layout_constraintTop_toBottomOf="@+id/button2">
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/textDesc"
             android:layout_width="389dp"
-            android:layout_height="match_parent"
+            android:layout_height="342dp"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine" />
@@ -130,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/textTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -151,18 +152,18 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="취소" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="입력" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

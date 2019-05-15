@@ -1,6 +1,7 @@
 package edu.android.hashtravel;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 
 /**
@@ -22,7 +21,8 @@ public class DashboardFragment extends Fragment {
 
     private Spinner continentSpinner, countrySpinner;
 //    private String[] continents = {"Asia", "Europe", "America", "South America", "Africa", "Oceania"};
-
+    private View view;
+    private ImageButton buttonWrite;
     public DashboardFragment() {
         // Required empty public constructor
     }
@@ -32,7 +32,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("message");
@@ -40,6 +40,13 @@ public class DashboardFragment extends Fragment {
 //        myRef.setValue("Hello, World!");
         continentSpinner = view.findViewById(R.id.continectSpinner);
         countrySpinner = view.findViewById(R.id.countrySpinner);
+        buttonWrite = view.findViewById(R.id.buttonWrite);
+        buttonWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getWriteBoard();
+            }
+        });
 
         continentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -67,6 +74,8 @@ public class DashboardFragment extends Fragment {
 
             }
 
+
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -75,6 +84,11 @@ public class DashboardFragment extends Fragment {
 
 
        return view;
+    }
+
+    private void getWriteBoard() {
+        Intent intent = new Intent(view.getContext(), WriteBordActivity.class);
+        startActivity(intent);
     }
 
 }
