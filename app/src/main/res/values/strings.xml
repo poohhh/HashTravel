@@ -17,7 +17,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_hotPlace">HotPlace</string>
 
+    <string-array name="empty"></string-array>
     <string-array name = "continent">
+        <item>All</item>
         <item>Asia</item>
         <item>Europe</item>
         <item>America</item>
@@ -45,6 +47,7 @@
         <item>etc</item>
     </string-array>
 
+
     <string-array name="America_">
         <item>Canada</item>
         <item>NewYork</item>
@@ -63,7 +66,7 @@
     </string-array>
 
     <string-array name="Africa_Country">
-        <item>Egypt</item>
+    <item>Egypt</item>
         <item>Kenya</item>
         <item>Republic of South Africa</item>
         <item>Morocco</item>
@@ -76,5 +79,6 @@
         <item>etc</item>
 
     </string-array>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
