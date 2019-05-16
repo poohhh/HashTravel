@@ -20,19 +20,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Spinner
-            android:id="@+id/spinner9"
+            android:id="@+id/spinnerCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <Spinner
-            android:id="@+id/spinner11"
+            android:id="@+id/spinnerWrContinent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/continent" />
 
         <Spinner
-            android:id="@+id/spinner12"
+            android:id="@+id/spinnerWrCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />

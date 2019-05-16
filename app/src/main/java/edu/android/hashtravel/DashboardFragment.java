@@ -27,7 +27,6 @@ public class DashboardFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class DashboardFragment extends Fragment {
 //        DatabaseReference myRef = database.getReference("message");
 //
 //        myRef.setValue("Hello, World!");
-        continentSpinner = view.findViewById(R.id.continectSpinner);
+                continentSpinner = view.findViewById(R.id.continectSpinner);
         countrySpinner = view.findViewById(R.id.countrySpinner);
         buttonWrite = view.findViewById(R.id.buttonWrite);
         buttonWrite.setOnClickListener(new View.OnClickListener() {
@@ -52,29 +51,8 @@ public class DashboardFragment extends Fragment {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               ArrayAdapter<CharSequence> adpter;
-               if(position == 1) {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Asia_Country, android.R.layout.simple_spinner_item);
-               } else if(position == 2) {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Europe_Country, android.R.layout.simple_spinner_item);
-               } else if(position == 3) {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.America_, android.R.layout.simple_spinner_item);
-               } else if(position == 4) {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.SouthAmerica_Country, android.R.layout.simple_spinner_item);
-               } else if(position == 5) {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Africa_Country, android.R.layout.simple_spinner_item);
-               } else if(position == 6){
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Oceania_, android.R.layout.simple_spinner_item);
-               } else {
-                   adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.empty, android.R.layout.simple_spinner_item);
-               }
-
-               adpter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-               countrySpinner.setAdapter(adpter);
-
+              setSpinnerCountry(position, countrySpinner);
             }
-
-
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -91,4 +69,25 @@ public class DashboardFragment extends Fragment {
         startActivity(intent);
     }
 
+    public void setSpinnerCountry(int position, Spinner countrySpinner) {
+        ArrayAdapter<CharSequence> adpter;
+        if(position == 1) {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Asia_Country, android.R.layout.simple_spinner_item);
+        } else if(position == 2) {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Europe_Country, android.R.layout.simple_spinner_item);
+        } else if(position == 3) {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.America_, android.R.layout.simple_spinner_item);
+        } else if(position == 4) {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.SouthAmerica_Country, android.R.layout.simple_spinner_item);
+        } else if(position == 5) {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Africa_Country, android.R.layout.simple_spinner_item);
+        } else if(position == 6){
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.Oceania_, android.R.layout.simple_spinner_item);
+        } else {
+            adpter = ArrayAdapter.createFromResource(view.getContext(), R.array.empty, android.R.layout.simple_spinner_item);
+        }
+
+        adpter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        countrySpinner.setAdapter(adpter);
+    }
 }

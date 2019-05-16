@@ -26,6 +26,7 @@ public class DashBoard {
     private String description;
     private String author;
     private String hashTag;
+    private int views;
 
 
     static class Place {
