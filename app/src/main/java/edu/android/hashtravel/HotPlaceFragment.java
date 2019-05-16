@@ -1,6 +1,7 @@
 package edu.android.hashtravel;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import static edu.android.hashtravel.DashBoard.Place;
  */
 public class HotPlaceFragment extends Fragment {
 
+    public static final String KEY_PLACE_ID = "place_id";
     private RecyclerView recyclerView;
     private PlaceDao placeDao = PlaceDao.getInstance();
 
@@ -59,12 +61,20 @@ public class HotPlaceFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+        public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
             Place placeSite = placeDao.getPlaceList().get(position);
 
             viewHolder.imageView.setImageResource(placeSite.getPhotoId());
             viewHolder.textView.setText(placeSite.getName());
             viewHolder.ratingBar.setRating(placeSite.getRating());
+
+            // TODO
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showPlaceDetail(position);
+                }
+            });
         }
 
         @Override
@@ -84,6 +94,14 @@ public class HotPlaceFragment extends Fragment {
                 ratingBar = itemView.findViewById(R.id.ratingBar);
             }
         }
+    }
+
+    private void showPlaceDetail(int position) {
+
+        Intent intent = new Intent(getContext(), PlaceDetailActivity.class );
+        // TODO position말고 id로 후에 구현
+        intent.putExtra(KEY_PLACE_ID, position);
+        startActivity(intent);
     }
 
 

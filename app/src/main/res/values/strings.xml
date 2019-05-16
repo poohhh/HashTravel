@@ -18,7 +18,7 @@
     <string name="title_hotPlace">HotPlace</string>
 
     <string-array name="empty"></string-array>
-    <string-array name = "continent">
+    <string-array name="continent">
         <item>All</item>
         <item>Asia</item>
         <item>Europe</item>
@@ -66,7 +66,7 @@
     </string-array>
 
     <string-array name="Africa_Country">
-    <item>Egypt</item>
+        <item>Egypt</item>
         <item>Kenya</item>
         <item>Republic of South Africa</item>
         <item>Morocco</item>
