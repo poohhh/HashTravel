@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    private TextView userId;
     private BottomNavigationView bottomView;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        userId = navigationView.getHeaderView(0).findViewById(R.id.userId);
 
         bottomView= findViewById(R.id.bottom_view);
         viewPager = findViewById(R.id.viewpager_id);

@@ -4,9 +4,6 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -70,7 +67,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="RunConfigurationProducerService">
@@ -488,14 +485,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Gradle: com.google.android.gms:play-services-basement:16.0.1@aar">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/60a2a1d20e5a435f5631bb969f5310a3/jars/classes.jar!/" />
-        <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/60a2a1d20e5a435f5631bb969f5310a3/res" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="Gradle: com.google.android.gms:play-services-basement:16.2.0@aar">
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/c61bfd31cc1eb9ad7029222bf553a443/jars/classes.jar!/" />
@@ -605,16 +594,6 @@
       </CLASSES>
       <JAVADOC>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-analytics/16.4.0/b884044d2f8732260837f470f4ed231a876cb2e3/firebase-analytics-16.4.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES />
-    </library>
-    <library name="Gradle: com.google.firebase:firebase-common:16.0.3@aar">
-      <CLASSES>
-        <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/d305513a4b2a004d7319658ca479cea1/res" />
-        <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/d305513a4b2a004d7319658ca479cea1/jars/classes.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/16.0.3/d8fb501ad05b51e2a89e23dafeb391fd62a030b5/firebase-common-16.0.3-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES />
     </library>
