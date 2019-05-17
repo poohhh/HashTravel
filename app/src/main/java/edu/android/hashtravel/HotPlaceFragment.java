@@ -23,7 +23,7 @@ public class HotPlaceFragment extends Fragment {
     private RecyclerView recyclerView;
     private DashBoardDao dashBoardDao = DashBoardDao.getInstance();
 
-    public HotPlaceFragment() {
+    public HotPlaceFragment() {//
         // Required empty public constructor
     }
 
