@@ -4,7 +4,6 @@ package edu.android.hashtravel;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import static edu.android.hashtravel.DashBoard.Place;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +21,7 @@ public class HotPlaceFragment extends Fragment {
 
     public static final String KEY_PLACE_ID = "place_id";
     private RecyclerView recyclerView;
-    private PlaceDao placeDao = PlaceDao.getInstance();
+    private DashBoardDao dashBoardDao = DashBoardDao.getInstance();
 
     public HotPlaceFragment() {
         // Required empty public constructor
@@ -62,11 +59,11 @@ public class HotPlaceFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-            Place placeSite = placeDao.getPlaceList().get(position);
+            DashBoard dashBoard = dashBoardDao.getDsahBoardList().get(position);
 
-            viewHolder.imageView.setImageResource(placeSite.getPhotoId());
-            viewHolder.textView.setText(placeSite.getName());
-            viewHolder.ratingBar.setRating(placeSite.getRating());
+            viewHolder.imageView.setImageResource( dashBoard.getPhotoId());
+            viewHolder.textView.setText( dashBoard.getSubject());
+
 
             // TODO
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +76,7 @@ public class HotPlaceFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return placeDao.getPlaceList().size();
+            return dashBoardDao.getDsahBoardList().size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -91,7 +88,7 @@ public class HotPlaceFragment extends Fragment {
                 super(itemView);
                 imageView = itemView.findViewById(R.id.placeImageView);
                 textView = itemView.findViewById(R.id.placeTextName);
-                ratingBar = itemView.findViewById(R.id.ratingBar);
+
             }
         }
     }

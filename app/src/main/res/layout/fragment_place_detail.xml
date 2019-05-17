@@ -7,9 +7,10 @@
     tools:context=".PlaceDetailFragment">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
 
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="8dp">
 
         <android.support.v7.widget.Toolbar
@@ -46,13 +48,6 @@
             android:layout_margin="8dp"
             android:text="여행지 이름"
             android:textSize="24sp" />
-
-        <RatingBar
-            android:id="@+id/detailRatingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5" />
 
         <TextView
             android:id="@+id/detailDesc"

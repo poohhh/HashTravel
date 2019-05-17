@@ -19,8 +19,8 @@ public class PlaceDetailFragment extends Fragment {
 
     private ImageView imageView;
     private TextView textName, textDesc;
-    private RatingBar ratingBar;
-    private PlaceDao dao = PlaceDao.getInstance();
+
+    private DashBoardDao dao = DashBoardDao.getInstance();
 
     public PlaceDetailFragment() {
         // Required empty public constructor
@@ -47,16 +47,16 @@ public class PlaceDetailFragment extends Fragment {
         imageView = view.findViewById(R.id.detailImage);
         textName = view.findViewById(R.id.detailName);
         textDesc = view.findViewById(R.id.detailDesc);
-        ratingBar = view.findViewById(R.id.detailRatingBar);
+
 
         Bundle args = getArguments();
         int position = args.getInt(ARG_PLACE_INDEX);
 
-        DashBoard.Place placeStie = dao.getPlaceList().get(position);
-        imageView.setImageResource(placeStie.getPhotoId());
-        textName.setText(placeStie.getName());
-        ratingBar.setRating(placeStie.getRating());
-        textDesc.setText(placeStie.getDesc());
+        DashBoard dashBoard = dao.getDsahBoardList().get(position);
+        imageView.setImageResource(dashBoard.getPhotoId());
+        textName.setText(dashBoard.getCategory());
+
+        textDesc.setText(dashBoard.getDescription());
 
 
         return view;
