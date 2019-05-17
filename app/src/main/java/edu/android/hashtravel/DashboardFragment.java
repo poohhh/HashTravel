@@ -18,7 +18,6 @@ import android.widget.Spinner;
  */
 public class DashboardFragment extends Fragment {
 
-
     private Spinner continentSpinner, countrySpinner;
 //    private String[] continents = {"Asia", "Europe", "America", "South America", "Africa", "Oceania"};
     private View view;
@@ -37,7 +36,8 @@ public class DashboardFragment extends Fragment {
 //        DatabaseReference myRef = database.getReference("message");
 //
 //        myRef.setValue("Hello, World!");
-                continentSpinner = view.findViewById(R.id.continectSpinner);
+
+        continentSpinner = view.findViewById(R.id.continectSpinner);
         countrySpinner = view.findViewById(R.id.countrySpinner);
         buttonWrite = view.findViewById(R.id.buttonWrite);
         buttonWrite.setOnClickListener(new View.OnClickListener() {

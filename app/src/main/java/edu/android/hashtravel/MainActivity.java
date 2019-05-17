@@ -1,5 +1,6 @@
 package edu.android.hashtravel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -20,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
 
     private TextView userId;
     private BottomNavigationView bottomView;
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -63,6 +62,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        // userId 찾음
         userId = navigationView.getHeaderView(0).findViewById(R.id.userId);
 
         bottomView= findViewById(R.id.bottom_view);
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         bottomView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
+        // ViewPager에 Fragment 추가
         adapter.addFragment(new HomeFragment(), "homefragment");
         adapter.addFragment(new DashboardFragment(), "dashboard");
         adapter.addFragment(new HotPlaceFragment(), "hotplace");
@@ -138,17 +139,20 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // TODO 네비게이션뷰 아이템 클릭했을때 기능 구현
         int id = item.getItemId();
 
         if (id == R.id.nav_logIn) {
-            // Handle the camera action
+
+
         } else if (id == R.id.nav_myRead) {
 
         } else if (id == R.id.nav_favoriteCountry) {
 
         } else if (id == R.id.nav_write) {
-
+            // 글쓰기 액티비티로 이동
+            Intent intent = new Intent(this, WriteBordActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_myInfo) {
 
         } else if (id == R.id.nav_notice) {
@@ -159,6 +163,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 }
