@@ -29,6 +29,7 @@
     </string-array>
 
     <string-array name="Asia_Country">
+        <item>All</item>
         <item>Japan</item>
         <item>China</item>
         <item>Taiwan</item>
@@ -39,6 +40,7 @@
     </string-array>
 
     <string-array name="Europe_Country">
+        <item>All</item>
         <item>Germany</item>
         <item>France</item>
         <item>UK</item>
@@ -49,6 +51,7 @@
 
 
     <string-array name="America_">
+        <item>All</item>
         <item>Canada</item>
         <item>NewYork</item>
         <item>LA</item>
@@ -58,6 +61,7 @@
     </string-array>
 
     <string-array name="SouthAmerica_Country">
+        <item>All</item>
         <item>Peru</item>
         <item>Brazil</item>
         <item>Argentina</item>
@@ -66,6 +70,7 @@
     </string-array>
 
     <string-array name="Africa_Country">
+        <item>All</item>
         <item>Egypt</item>
         <item>Kenya</item>
         <item>Republic of South Africa</item>
@@ -74,11 +79,16 @@
     </string-array>
 
     <string-array name="Oceania_">
+        <item>All</item>
         <item>New Zealand</item>
         <item>Australia</item>
         <item>etc</item>
-
     </string-array>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="category">
+        <item>전체</item>
+        <item>여행후기</item>
+        <item>계획,정보공유</item>
+        <item>동행</item>
+    </string-array>
 </resources>

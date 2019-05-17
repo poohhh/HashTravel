@@ -15,12 +15,12 @@ public class PlaceDao {
     }
 
     private void makeDummyData() {
-        placeList.add(new Place("개선문", null, 3.5F, R.drawable.arc_de_triomphe));
-        placeList.add(new Place("에펠탑", null, 4.0F, R.drawable.eiffel_tower));
-        placeList.add(new Place("금문교", null, 3.0F, R.drawable.golden_gate_bridge));
-        placeList.add(new Place("국회의사당", null, 3.5F, R.drawable.house_of_parliament));
-        placeList.add(new Place("런던아이", null, 5.0F, R.drawable.london_eye));
-        placeList.add(new Place("타워브리지", null, 4.5F, R.drawable.tower_bridge));
+        placeList.add(new Place("개선문", "개선문입니다", 3.5F, R.drawable.arc_de_triomphe));
+        placeList.add(new Place("에펠탑", "에펠탑 가고싶다", 4.0F, R.drawable.eiffel_tower));
+        placeList.add(new Place("금문교", "금문교 갈까", 3.0F, R.drawable.golden_gate_bridge));
+        placeList.add(new Place("국회의사당", "국회의사당...", 3.5F, R.drawable.house_of_parliament));
+        placeList.add(new Place("런던아이", "런던도 가고싶다", 5.0F, R.drawable.london_eye));
+        placeList.add(new Place("타워브리지", "타워브리지 멋잇네", 4.5F, R.drawable.tower_bridge));
     }
 
     public static PlaceDao getInstance() {

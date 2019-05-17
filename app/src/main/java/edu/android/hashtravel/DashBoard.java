@@ -20,13 +20,13 @@ public class DashBoard {
 //        }
 //    }
     private int articleNo;
-    private String[] continent;
-    private String[] contry;
+    private String continent;
+    private String country;
     private String subject;
     private String description;
     private String author;
     private String hashTag;
-    private int views;
+    private int likes;
 
 
     static class Place {
